@@ -4,15 +4,18 @@ import com.google.gson.annotations.SerializedName
 
 data class ApiResponse(
     @SerializedName("results")
-    var results: Results
+    val results: Results
 )
 
 data class Results(
     @SerializedName("shop")
-    var shop: List<Shop>
+    val shop: List<Shop>
 )
 
 data class Shop(
+    @SerializedName("address")
+    var address: String,
+
     @SerializedName("coupon_urls")
     val couponUrls: CouponUrls,
     @SerializedName("id")
@@ -25,7 +28,7 @@ data class Shop(
 
 data class CouponUrls(
     @SerializedName("pc")
-    var pc: String,
+    val pc: String,
     @SerializedName("sp")
-    var sp: String
+    val sp: String
 )
